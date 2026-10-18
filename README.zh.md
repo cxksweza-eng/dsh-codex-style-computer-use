@@ -180,3 +180,26 @@ MIT —— 见 [LICENSE](LICENSE)。
 ## 已知限制与验收状态
 
 详见 README.md 的 Known limitations 章节（四项均为 NOT VERIFIED / NOT EXECUTED / UNKNOWN，不含 PASS）。
+
+---
+
+## 上游项目、署名与改动说明
+
+本仓库是**衍生作品**，并非原创项目。它以上述开源项目为起点，并针对 DeepSeek Harness
+集成、安全加固与浏览器自动化工具面做了大量修改。
+
+| 项目 | 值 |
+|---|---|
+| **上游项目** | https://github.com/ltmroberthk915/dsh-computer-use |
+| **上游 npm 包** | `dsh-codex-style-computer-use` |
+| **上游许可证** | MIT |
+| **上游版权** | Copyright (c) 2026 ltmroberthk915 |
+| **本仓库** | https://github.com/CXKSWEZA-eng/dsh-codex-style-computer-use |
+
+上游 MIT 许可证原文完整保留在 [`LICENSE`](./LICENSE) 中（含原始版权持有者）。MIT 允许修改与
+再分发，前提是保留版权与许可声明；保持 `LICENSE` 不变即满足该义务。
+
+改动范围详见英文 README 的 “Scope of the changes made here” 一节。
+
+`lib/core/worker.cs`、`mcp/` 与两个预编译 `.exe` 的第三方来源**未独立核实**；`.exe` 无版本
+元数据且未纳入本仓库，使用前需从 `lib/core/worker.cs` 重新构建。

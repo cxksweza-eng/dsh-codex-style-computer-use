@@ -234,3 +234,53 @@ points (`build-native.mjs`, `smoke-native.mjs`, `verify-package.mjs`).
 Reproducing the two shipped binaries from source in a clean checkout has **not
 been verified** in this release; treat them as build artifacts to be regenerated
 before publishing.
+
+---
+
+## Upstream project, attribution and changes
+
+This repository is a **derivative work**, not an original project. It began as the
+open-source project below and has been substantially modified for DeepSeek
+Harness integration, safety hardening and a browser-automation tool surface.
+
+| Item | Value |
+|---|---|
+| **Upstream project** | https://github.com/ltmroberthk915/dsh-computer-use |
+| **Upstream npm package** | `dsh-codex-style-computer-use` |
+| **Upstream license** | MIT |
+| **Upstream copyright** | Copyright (c) 2026 ltmroberthk915 |
+| **This fork** | https://github.com/CXKSWEZA-eng/dsh-codex-style-computer-use |
+
+The upstream MIT license text is preserved verbatim in [`LICENSE`](./LICENSE),
+including the original copyright holder. MIT permits modification and
+redistribution provided that copyright and permission notices are retained;
+keeping `LICENSE` unchanged satisfies that obligation.
+
+### Scope of the changes made here
+
+Substantial modifications, all in this repository's history:
+
+- **Policy gate** covers browser actuation (`browser_*`), not only `computer_*`.
+- **Browser automation tool surface** over CDP: `browser_observe`,
+  `browser_navigate`, `browser_click`, `browser_type`, `browser_press`,
+  `browser_verify`, `browser_open`, `browser_tabs`.
+- **Clipboard safety**: `ctrl+c` / `ctrl+v` are denied before an approval card is
+  shown when no target is named, and a role-only target is rejected.
+- **Observer privacy**: accessible names no longer fall back to a control's
+  value; value digests are salted per process.
+- **Cycle lifecycle**: a completed turn ends its own activity cycle, including a
+  residue path that clears the native light when the JS gate already finished.
+- **Action registry**: `dispatchClaimed` / `sideEffectSent` distinguish a claimed
+  dispatch slot from a real side effect.
+- **Tests**: 831 automated checks across 16 suites.
+
+### Third-party provenance
+
+- `lib/core/worker.cs` — C# native worker. No third-party copyright header found;
+  provenance assumed to be the upstream project. **Not independently verified.**
+- `mcp/` — MCP descriptor files. No third-party copyright header found.
+  **Provenance not independently verified.**
+- `lib/core/bin/*.exe`, `lib/bin/*.exe` — pre-built binaries with no version or
+  company metadata (`FileVersion 0.0.0.0`). Their provenance **cannot be
+  verified from the files**, and they are **not committed** to this repository
+  (see `.gitignore`). Rebuild them from `lib/core/worker.cs` before use.
