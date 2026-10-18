@@ -1,0 +1,9 @@
+# Line-ending policy: NO CONVERSION, ANYWHERE.
+#
+# WHY: the native helper build records sourceSha256 = SHA-256 of the RAW bytes of
+# lib/core/worker.cs and lib/attention-worker.cs, and scripts/verify-package.mjs checks
+# that same raw-byte hash. Any CRLF/LF conversion during checkout changes those bytes
+# and therefore breaks the source-to-binary correspondence that the manifests assert.
+# -text disables all automatic EOL conversion so a clone is byte-identical to the
+# tree the manifests were produced from.
+* -text
