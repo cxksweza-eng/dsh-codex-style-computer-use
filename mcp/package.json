@@ -1,0 +1,12 @@
+{
+  "name": "@dsh/computer-use-mcp",
+  "version": "0.1.0",
+  "description": "MCP stdio server exposing dsh-computer-use to any MCP client (Claude Desktop, Codex, ...). Zero npm dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": { "dsh-computer-use-mcp": "src/index.js" },
+  "files": ["src"],
+  "engines": { "node": ">=22" },
+  "license": "MIT",
+  "keywords": ["mcp", "computer-use", "windows", "deepseek-harness"]
+}

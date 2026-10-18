@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><title>CU Browser Approval Fixture</title></head><body>
+<h1>Approval fixture</h1>
+<button id="approve-target" data-state="off">Run the approved action</button>
+<p id="result">not clicked yet</p>
+
+<h2>Press targets</h2>
+<form id="press-form" action="/submitted" method="get">
+  <label for="press-field">Press field</label>
+  <input id="press-field" name="press-field" type="text" value="pressme">
+  <button id="press-submit" type="submit">Submit</button>
+</form>
+<p id="submit-count">submissions: 0</p>
+
+<h2>Typing targets</h2>
+<label for="type-input">Type here</label>
+<input id="type-input" name="type-input" type="text" placeholder="empty">
+<div id="host"></div>
+
+<script>
+  document.getElementById('approve-target').addEventListener('click', function () {
+    this.setAttribute('data-state', 'on');
+    document.getElementById('result').textContent = 'the approved action ran';
+    document.title = 'CU Browser Approval Fixture - RAN';
+  });
+  // Count submissions in this page's own sessionStorage so a second submit is detectable rather than assumed.
+  var n = Number(sessionStorage.getItem('cu-submits') || '0');
+  document.getElementById('submit-count').textContent = 'submissions: ' + n;
+  document.getElementById('press-form').addEventListener('submit', function () {
+    sessionStorage.setItem('cu-submits', String(n + 1));
+  });
+  window.mut = {
+    report: function () { var e = document.getElementById('press-field'); return { exists: !!e, value: e ? e.value : null, active: document.activeElement ? (document.activeElement.id || document.activeElement.tagName) : null, title: document.title, submits: sessionStorage.getItem('cu-submits') }; }
+  };
+</script></body></html>

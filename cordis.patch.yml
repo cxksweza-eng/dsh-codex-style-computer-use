@@ -1,0 +1,17 @@
+# cordis.patch.yml — dsh-computer-use bundle layer.
+# `dsh.bundle.patch` in package.json points here; installing this package into a profile
+# reconciles this insert into the profile's plugin stack.
+#
+# automationMode defaults to `standard` on purpose: observation is free, and every actuation
+# (click / type / key / drag / scroll / clipboard write) goes through the host's approval card.
+# Raise it to `autonomous` (high-risk operations still ask) or `unrestricted` deliberately, in
+# Settings → computer-use, once you have decided the machine may be driven without a prompt.
+- insert:
+  - id: computer-use
+    name: dsh-codex-style-computer-use
+    config:
+      enabled: true
+      automationMode: standard   # read-only | standard | autonomous | unrestricted
+      dryRun: false
+      maxActionsPerMinute: 60
+      annotateMarks: true
