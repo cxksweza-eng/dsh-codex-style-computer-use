@@ -57,7 +57,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ltmroberthk915/dsh-computer-use.git"
+    "url": "git+https://github.com/CXKSWEZA-eng/dsh-codex-style-computer-use.git"
   },
   "keywords": [
     "deepseek-harness",
@@ -81,8 +81,8 @@
     "build:native": "node scripts/build-native.mjs",
     "verify:package": "node scripts/verify-package.mjs"
   },
-  "homepage": "https://github.com/ltmroberthk915/dsh-computer-use#readme",
+  "homepage": "https://github.com/CXKSWEZA-eng/dsh-codex-style-computer-use#readme",
   "bugs": {
-    "url": "https://github.com/ltmroberthk915/dsh-computer-use/issues"
+    "url": "https://github.com/CXKSWEZA-eng/dsh-codex-style-computer-use/issues"
   }
 }
