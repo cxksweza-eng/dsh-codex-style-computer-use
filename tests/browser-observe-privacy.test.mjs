@@ -18,8 +18,8 @@
 import http from 'node:http'
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
-import { observePage, matchTarget } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-observe.js'
+import { BrowserSession } from '../lib/browser-session.js'
+import { observePage, matchTarget } from '../lib/browser-observe.js'
 
 const PORT = Number(process.env.CU_PRIV_PORT || 9401)
 const HTTP_PORT = Number(process.env.CU_PRIV_HTTP || 8831)

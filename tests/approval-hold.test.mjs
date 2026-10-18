@@ -8,7 +8,7 @@
 // The stub respects the one invariant that matters: `call('approvalHold', {on:true})` makes the
 // simulated machine report `cooperation.active === false` even when a human burst is in flight.
 
-import { ComputerUse } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/core/index.js'
+import { ComputerUse } from '../lib/core/index.js'
 
 let failures = 0
 let checks = 0

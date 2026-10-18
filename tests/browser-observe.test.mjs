@@ -10,8 +10,8 @@
 
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
-import { observePage, matchTarget } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-observe.js'
+import { BrowserSession } from '../lib/browser-session.js'
+import { observePage, matchTarget } from '../lib/browser-observe.js'
 
 const PORT = 9337
 const PROFILE = join(os.tmpdir(), 'cu-browser-observe-profile')

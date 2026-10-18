@@ -18,10 +18,10 @@
 import http from 'node:http'
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
-import { registerBrowserTools } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js'
-import { ActionRegistry } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
-import { policyDecision, highRisk } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/policy.js'
+import { BrowserSession } from '../lib/browser-session.js'
+import { registerBrowserTools } from '../lib/browser-tools.js'
+import { ActionRegistry } from '../lib/action-registry.js'
+import { policyDecision, highRisk } from '../lib/policy.js'
 
 const PORT = Number(process.env.CU_CLIP_PORT || 9421)
 const HTTP_PORT = Number(process.env.CU_CLIP_HTTP || 8851)

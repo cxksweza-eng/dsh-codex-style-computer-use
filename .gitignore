@@ -1,24 +1,24 @@
-# 构建产物（由源码编译，不入库）
-lib/core/bin/
+# 閺嬪嫬缂撴禍褏澧块敍鍫㈡暠濠ф劗鐖滅紓鏍槯閿涘奔绗夐崗銉ョ氨閿?lib/core/bin/
 lib/bin/
-
-# 运行时数据与日志
+# 鏉╂劘顢戦弮鑸垫殶閹诡喕绗岄弮銉ョ箶
 *.log
 *.jsonl
 audit.json
 turn-end-diag*
 
-# 本地环境
+# 閺堫剙婀撮悳顖氼暔
 node_modules/
 .DS_Store
 Thumbs.db
 
-# 编辑器
-.vscode/
+# 缂傛牞绶崳?.vscode/
 .idea/
 
-# 测试临时产物
+# 濞村鐦稉瀛樻娴溠呭⒖
 tests/**/profile*/
 *.tmp
 *.bak
 tests-original-backup/
+
+.native-backup-*/
+lib/core/bin/

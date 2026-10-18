@@ -9,7 +9,7 @@
 
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
+import { BrowserSession } from '../lib/browser-session.js'
 
 const PORT = 9334   // deliberately not 9222: never fight with a browser the user has open
 const PROFILE = join(os.tmpdir(), 'cu-browser-test-profile')

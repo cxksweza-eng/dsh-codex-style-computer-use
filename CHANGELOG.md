@@ -3,6 +3,25 @@
 All notable changes to this project are documented here.
 This project does not yet follow a formal versioning policy beyond semver.
 
+## [1.3.0] - 2026-10-19
+
+Fork release on top of upstream dsh-codex-style-computer-use@1.2.1
+(https://github.com/ltmroberthk915/dsh-computer-use, MIT).
+
+### Added
+- Upstream attribution section in README.md and README.zh.md.
+- SECURITY.md with the threat model and the four unverified acceptance items.
+- .gitignore covering build artifacts, logs and backups.
+
+### Changed
+- Native helpers are rebuilt from source in this repository; both manifests now
+  record the current worker.cs / ttention-worker.cs hashes, so the
+  source-to-binary correspondence is verifiable with scripts/verify-package.mjs.
+  This does **not** make the build byte-for-byte reproducible (PE timestamps
+  differ between builds) and it does not by itself prove the binaries are safe.
+- wrapper-policy.test.mjs uses the OS temp directory instead of a hard-coded
+  local path.
+- README documents that a clean clone must build the native helpers before use.
 ## [1.2.1] - 2026-10-19
 
 ### Added

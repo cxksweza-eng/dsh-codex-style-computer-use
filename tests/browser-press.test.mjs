@@ -12,9 +12,9 @@
 import http from 'node:http'
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
-import { registerBrowserTools, BROWSER_TEST_BOUNDARY } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js'
-import { ActionRegistry } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
+import { BrowserSession } from '../lib/browser-session.js'
+import { registerBrowserTools, BROWSER_TEST_BOUNDARY } from '../lib/browser-tools.js'
+import { ActionRegistry } from '../lib/action-registry.js'
 
 const PORT = Number(process.env.CU_PRESS_PORT || 9381)
 const HTTP_PORT = Number(process.env.CU_PRESS_HTTP || 8821)
@@ -105,9 +105,9 @@ try {
   const nav = await raw('browser_navigate', { url: URL_, expectTitleIncludes: 'Press Fixture' })
   ok(nav.ok === true, 'fixture loaded', JSON.stringify(nav.problems))
   ok(tools.has('browser_press'), 'browser_press is registered')
-  const { BROWSER_ACTUATION_TOOLS, resolveKey } = await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js').then(async (m) => ({ ...m, resolveKey: (await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-actions.js')).resolveKey }))
+  const { BROWSER_ACTUATION_TOOLS, resolveKey } = await import('../lib/browser-tools.js').then(async (m) => ({ ...m, resolveKey: (await import('../lib/browser-actions.js')).resolveKey }))
   ok(BROWSER_ACTUATION_TOOLS.has('browser_press'), 'and is in BROWSER_ACTUATION_TOOLS (policy gate governs it)')
-  const { policyDecision } = await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/policy.js')
+  const { policyDecision } = await import('../lib/policy.js')
   ok(policyDecision('browser_press', { key: 'Enter' }, 'standard').kind === 'ask', 'standard mode ASKS for browser_press')
   ok(policyDecision('browser_press', { key: 'Enter' }, 'read-only').kind === 'deny', 'read-only mode DENIES browser_press')
 
@@ -278,7 +278,7 @@ try {
   ok(aWithTarget.dispatched === true, 'ctrl+a still works with a target', aWithTarget.code || aWithTarget.outcome)
 
   section('T  D4 correlation: hostCallId travels with the record')
-  const { noteHostCallId } = await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js')
+  const { noteHostCallId } = await import('../lib/action-registry.js')
   await reset(); await focusField('#nf')
   noteHostCallId('browser_press', 'call_press_test_1')
   const t1 = await raw('browser_press', { key: 'Home', selector: '#nf' })

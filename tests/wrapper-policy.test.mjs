@@ -1,3 +1,5 @@
+import path from 'node:path'
+import os from 'node:os'
 // Wrapper-level test for the approval/handoff policy (2026-10-16).
 //
 // WHY THIS FILE EXISTS: the first integration run failed with `ReferenceError: act is not defined`.
@@ -5,8 +7,8 @@
 // `tools.js` that builds `act` and hands it to `withInputContext` — the exact line that was broken.
 // These tests go through `registerTools(...).execute(...)`, which is what the Host actually calls.
 
-import { registerTools } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/tools.js'
-import { ActionRegistry } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
+import { registerTools } from '../lib/tools.js'
+import { ActionRegistry } from '../lib/action-registry.js'
 
 let failures = 0
 let checks = 0
@@ -67,7 +69,7 @@ function harverst () {
     ctx,
     cu,
     config: { annotateMarks: true, actionFeedback: false },
-    dataDir: 'C:\\Users\\liu\\AppData\\Local\\Temp\\cu-wrapper-test',
+    dataDir: path.join(os.tmpdir(), 'cu-wrapper-test'),
     log: { info: () => {}, warn: () => {} },
     snapshotPath: (d) => `${d}\\shot.jpg`,
     // `defineTool` in the real plugin attaches the output/schema plumbing. The wrapper under test only

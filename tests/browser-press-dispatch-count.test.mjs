@@ -12,9 +12,9 @@
 import http from 'node:http'
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
-import { registerBrowserTools } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js'
-import { ActionRegistry } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
+import { BrowserSession } from '../lib/browser-session.js'
+import { registerBrowserTools } from '../lib/browser-tools.js'
+import { ActionRegistry } from '../lib/action-registry.js'
 
 const PORT = Number(process.env.CU_INSTR_PORT || 9411)
 const HTTP_PORT = Number(process.env.CU_INSTR_HTTP || 8841)

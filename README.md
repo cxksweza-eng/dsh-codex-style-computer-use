@@ -8,7 +8,7 @@ English | [中文](README.zh.md)
 
 Windows only (`os: win32`). Requires Node.js ≥ 22 and the .NET Framework 4.x that Windows ships with.
 
-**1.2.1 attention fix:** fixes a missing crypto import that prevented 1.2.0's native `probe` and `raise` requests from reaching the helper. Updating from 1.2.0 is required for this runtime fix; reinstalling 1.2.0 does not fix it. New releases are staged on npm's `next` tag before promotion to `latest`; the market's normal update follows `latest`. See [1.2.1 validation and release status](docs/RELEASE-1.2.1.md).
+**1.3.0 attention fix:** fixes a missing crypto import that prevented 1.2.0's native `probe` and `raise` requests from reaching the helper. Updating from 1.2.0 is required for this runtime fix; reinstalling 1.2.0 does not fix it. New releases are staged on npm's `next` tag before promotion to `latest`; the market's normal update follows `latest`. See [1.3.0 validation and release status](docs/RELEASE-1.3.0.md).
 
 ## What it does
 
@@ -50,7 +50,7 @@ minimumReleaseAgeExclude:
 
 The default desktop path is `%USERPROFILE%\.dsh\profiles\desktop\pnpm-workspace.yaml`; use the actual directory if `DSH_HOME` is customized. Remove this one exception after the version matures if desired.
 
-The earlier documentation and publisher-check corrections did not change the 1.2.0 runtime and needed no reinstall. The native attention fix in **1.2.1** does require an update. Re-adding the same source can produce a host `ambiguous-install` error on some installation paths; reinstalling 1.2.0 will not apply the 1.2.1 fix.
+The earlier documentation and publisher-check corrections did not change the 1.2.0 runtime and needed no reinstall. The native attention fix in **1.3.0** does require an update. Re-adding the same source can produce a host `ambiguous-install` error on some installation paths; reinstalling 1.2.0 will not apply the 1.3.0 fix.
 
 **Migrating an older Git/tarball installation from this repository:** remove the old **dsh-computer-use** entry in the market, then install **dsh-codex-style-computer-use**. The unscoped npm name `dsh-computer-use` belongs to a different repository; do not install it as an upgrade of this plugin. A Git installation cannot switch its dependency identity just by fetching a new commit. After this one-time UI migration, use normal market updates. Existing `computer_*` tool names and the `computer-use` settings namespace are retained.
 

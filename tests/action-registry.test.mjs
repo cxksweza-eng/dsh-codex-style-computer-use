@@ -4,7 +4,7 @@
 // reaches it exactly ONCE, and an outcome that might have landed is never replayed.
 
 import { ActionRegistry, STATES, stateForError }
-  from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
+  from '../lib/action-registry.js'
 
 let failures = 0
 let checks = 0

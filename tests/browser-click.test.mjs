@@ -18,9 +18,9 @@
 import http from 'node:http'
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
-import { registerBrowserTools, BROWSER_TEST_BOUNDARY } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js'
-import { ActionRegistry } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
+import { BrowserSession } from '../lib/browser-session.js'
+import { registerBrowserTools, BROWSER_TEST_BOUNDARY } from '../lib/browser-tools.js'
+import { ActionRegistry } from '../lib/action-registry.js'
 
 const PORT = Number(process.env.CU_BROWSER_PORT || 9344)
 const HTTP_PORT = Number(process.env.CU_HTTP_PORT || 8791)
@@ -185,7 +185,7 @@ try {
   // variant of this scenario is unreachable by construction — which is itself the strongest form of the
   // guarantee — and the rule that still needs proving is that revalidation, given a structural identity
   // and a live page with two matches, refuses rather than choosing one.
-  const { revalidateIdentity } = await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-actions.js')
+  const { revalidateIdentity } = await import('../lib/browser-actions.js')
   const structuralObs = {
     ok: true, url: 'http://x/', title: 't',
     interactive: [

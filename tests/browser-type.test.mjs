@@ -15,9 +15,9 @@
 import http from 'node:http'
 import os from 'node:os'
 import { join } from 'node:path'
-import { BrowserSession } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-session.js'
-import { registerBrowserTools, BROWSER_TEST_BOUNDARY } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js'
-import { ActionRegistry } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
+import { BrowserSession } from '../lib/browser-session.js'
+import { registerBrowserTools, BROWSER_TEST_BOUNDARY } from '../lib/browser-tools.js'
+import { ActionRegistry } from '../lib/action-registry.js'
 
 const PORT = Number(process.env.CU_TYPE_PORT || 9361)
 const HTTP_PORT = Number(process.env.CU_TYPE_HTTP || 8811)
@@ -93,9 +93,9 @@ try {
 
   section('T1  the tool is registered and declared as an actuation tool')
   ok(tools.has('browser_type'), 'browser_type is registered')
-  const { BROWSER_ACTUATION_TOOLS } = await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js')
+  const { BROWSER_ACTUATION_TOOLS } = await import('../lib/browser-tools.js')
   ok(BROWSER_ACTUATION_TOOLS.has('browser_type'), 'and is in BROWSER_ACTUATION_TOOLS (so the policy gate governs it)')
-  const { policyDecision } = await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/policy.js')
+  const { policyDecision } = await import('../lib/policy.js')
   ok(policyDecision('browser_type', { text: 'x' }, 'standard').kind === 'ask', 'standard mode ASKS for browser_type',
     JSON.stringify(policyDecision('browser_type', { text: 'x' }, 'standard')))
   ok(policyDecision('browser_type', { text: 'x' }, 'read-only').kind === 'deny', 'read-only mode DENIES browser_type')
@@ -257,7 +257,7 @@ try {
   }
 
   section('N  D4 correlation: hostCallId travels with the record')
-  const { noteHostCallId } = await import('file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js')
+  const { noteHostCallId } = await import('../lib/action-registry.js')
   await session.attach()
   await reset()
   noteHostCallId('browser_type', 'call_type_test_1')

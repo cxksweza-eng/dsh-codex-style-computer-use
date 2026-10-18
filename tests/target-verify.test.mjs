@@ -5,7 +5,7 @@
 // desktop (a window that is re-used by a different process, a control that becomes ambiguous).
 
 import { captureBinding, resolveAndVerify, hasSelector }
-  from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/target-verify.js'
+  from '../lib/target-verify.js'
 
 let failures = 0
 let checks = 0

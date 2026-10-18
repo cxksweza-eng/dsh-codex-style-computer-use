@@ -12,7 +12,7 @@
 // `session/event` turn/end at the moment assumed here. Those are Host/worker facts and are verified only in
 // the real DSH run; they are listed as NOT VERIFIED in the report rather than implied by a green test.
 
-import { cycleEndVerdict, deferredCycleEndVerdict, ENDABLE_STATE } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/cycle-lifecycle.js'
+import { cycleEndVerdict, deferredCycleEndVerdict, ENDABLE_STATE } from '../lib/cycle-lifecycle.js'
 
 let failures = 0
 let checks = 0

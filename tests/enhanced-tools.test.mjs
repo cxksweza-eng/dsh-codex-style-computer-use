@@ -5,9 +5,9 @@
 // the action registry honestly. The `computer_*` tools are covered by wrapper-policy.test.mjs.
 
 import { registerEnhancedTools }
-  from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/enhanced-tools.js'
+  from '../lib/enhanced-tools.js'
 import { ActionRegistry }
-  from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
+  from '../lib/action-registry.js'
 
 let failures = 0
 let checks = 0

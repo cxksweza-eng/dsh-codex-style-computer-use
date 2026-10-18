@@ -16,8 +16,8 @@
 // This is an OFFLINE unit/integration test of the registry contract. It is NOT evidence that the real
 // DSH instance joins correctly — that requires a live run and is reported separately.
 
-import { ActionRegistry, noteHostCallId, consumeHostCallId } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/action-registry.js'
-import { runBrowserAction } from 'file:///C:/Users/liu/Documents/deepseek-harness/default-workspace/cu-release/lib/browser-tools.js'
+import { ActionRegistry, noteHostCallId, consumeHostCallId } from '../lib/action-registry.js'
+import { runBrowserAction } from '../lib/browser-tools.js'
 
 let failures = 0
 let checks = 0
